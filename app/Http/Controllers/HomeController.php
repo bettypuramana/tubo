@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Services;
+use App\Models\Contact;
+use App\Models\Career;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $services=Services::orderBy('id', 'DESC')->limit(4)->get();
+        $contact=Contact::orderBy('id', 'DESC')->limit(6)->get();
+        $career=Career::orderBy('id', 'DESC')->limit(6)->get();
+        return view('admin.home',compact('services','contact','career'));
     }
 }
