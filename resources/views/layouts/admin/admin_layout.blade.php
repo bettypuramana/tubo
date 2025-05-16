@@ -13,8 +13,11 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/vertical-layout-light/style.css') }}">
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"> -->
-     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+      <!-- DataTables CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/dataTable/dataTables.bootstrap5.min.css') }}">
+
+
+
 
 
     <!-- endinject -->
@@ -190,10 +193,7 @@
     <!-- container-scroller -->
     <!-- base:js -->
     <script src="{{ asset('assets/admin/vendors/js/vendor.bundle.base.js') }}"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
+
     <script src="{{ asset('assets/admin/js/off-canvas.js') }}"></script>
     <script src="{{ asset('assets/admin/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('assets/admin/js/template.js') }}"></script>
@@ -206,18 +206,9 @@
     <!-- End plugin js for this page -->
     <!-- Custom js for this page-->
     <script src="{{ asset('assets/admin/js/dashboard.js') }}"></script>
-    <!-- End custom js for this page-->
-
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script> 
-    $(document).ready(function() { 
-      $('#contactTable').DataTable({ responsive: true, pageLength: 10, order: [[0, 'asc']], language: { search: "_INPUT_", searchPlaceholder: "Search..." } 
-      }); 
-    }); </script> -->
-
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script> 
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+   <!-- DataTables JS -->
+    <script src="{{ asset('assets/admin/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/dataTables.bootstrap5.min.js') }}"></script>
     <script>
       $('#contactTable').DataTable({
         responsive: true,
