@@ -181,5 +181,6 @@ class ClientController extends Controller
         ClientProject::destroy($id);
         return back()->with('success', 'Project deleted.');
     }
+    
 
 }
