@@ -92,13 +92,6 @@
                         @endforeach
                         @endif
                     </tbody>
-                    <tfoot>
-                    <tr>
-                        <td colspan="3">
-                            {{ $projects->links() }}
-                        </td>
-                    </tr>
-                    </tfoot>
                 </table>
                 </div>
             </div>
@@ -208,6 +201,7 @@
                     </td>
                 `;
                 tbody.appendChild(newRow);
+                updateEntryCount();
             }
 
             // Show success message dynamically
@@ -227,5 +221,15 @@
             console.error(err);
         });
     });
+
+    function updateEntryCount() {
+        const totalEntries = document.querySelectorAll('#contactTable tbody tr').length;
+        const infoElement = document.querySelector('#contactTable_info');
+
+        if (infoElement) {
+            infoElement.textContent = `Showing 1 to ${totalEntries} of ${totalEntries} entries`;
+        }
+    }
+
 </script>
 @endsection
