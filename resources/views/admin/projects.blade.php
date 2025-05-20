@@ -41,6 +41,7 @@
                     <button type="submit" id="submit_button" class="btn btn-primary mr-2">Save</button>
                     <a href="{{ route('clients-list') }}" class="btn btn-light">Back</a>
                     <div id="message-container"></div>
+                    <div id="error-container" style="color: red; margin-bottom: 10px;"></div>
                 </form>
             </div>
             </div>
@@ -150,13 +151,22 @@
         })
         .then(response => {
             if (!response.ok) {
-                // Handle validation errors or server errors here
                 return response.json().then(errData => {
-                    // Example: show validation errors (basic)
-                    alert(Object.values(errData.errors).flat().join("\n"));
+                    const errorContainer = document.getElementById('error-container');
+                    if (errData.errors) {
+                        // Show validation errors inside the div
+                        errorContainer.innerHTML = Object.values(errData.errors).flat().join('<br>');
+                    } else if (errData.message) {
+                        // Show custom error message inside the div
+                        errorContainer.textContent = errData.message;
+                    } else {
+                        errorContainer.textContent = 'An error occurred.';
+                    }
                     throw new Error('Validation error');
                 });
             }
+            // Clear error container on success
+            document.getElementById('error-container').textContent = '';
             return response.json();
         })
         .then(data => {

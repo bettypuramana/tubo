@@ -132,44 +132,66 @@ class ClientController extends Controller
         return view('admin.projects', compact('client', 'projects'));
     }
     public function storeOrUpdate(Request $request, $client_id)
-    {
-        $validated = $request->validate([
-            'project_name' => 'required',
-            'contractor' => 'required',
-            'project_id' => 'nullable|exists:client_projects,id',
+{
+    $validated = $request->validate([
+        'project_name' => 'required',
+        'contractor' => 'required',
+        'project_id' => 'nullable|exists:client_projects,id',
+    ]);
+
+    // Check for existing project with same name and client_id
+    $existingProjectQuery = ClientProject::where('client_id', $client_id)
+        ->where('project_name', $validated['project_name']);
+
+    if ($request->project_id) {
+        // Exclude the current project when checking for duplicates
+        $existingProjectQuery->where('id', '!=', $request->project_id);
+    }
+
+    $existingProject = $existingProjectQuery->first();
+
+    if ($existingProject) {
+    if ($request->wantsJson()) {
+        return response()->json([
+            'errors' => ['project_name' => ['A project with this name already exists for this client.']]
+        ], 422);
+    }
+    return redirect()->back()->withErrors(['project_name' => 'A project with this name already exists for this client.']);
+}
+
+
+    if ($request->project_id) {
+        $project = ClientProject::findOrFail($request->project_id);
+        $project->update($validated);
+
+        if ($request->wantsJson()) {
+            return response()->json([
+                'id' => $project->id,
+                'project_name' => $project->project_name,
+                'contractor' => $project->contractor,
+                'message' => 'Project updated.'
+            ]);
+        }
+        return redirect()->back()->with('success', 'Project updated.');
+    } else {
+        $project = ClientProject::create([
+            'client_id' => $client_id,
+            'project_name' => $validated['project_name'],
+            'contractor' => $validated['contractor'],
         ]);
 
-        if ($request->project_id) {
-            $project = ClientProject::findOrFail($request->project_id);
-            $project->update($validated);
-
-            if ($request->wantsJson()) {
-                return response()->json([
-                    'id' => $project->id,
-                    'project_name' => $project->project_name,
-                    'contractor' => $project->contractor,
-                    'message' => 'Project updated.'
-                ]);
-            }
-            return redirect()->back()->with('success', 'Project updated.');
-        } else {
-            $project = ClientProject::create([
-                'client_id' => $client_id,
-                'project_name' => $validated['project_name'],
-                'contractor' => $validated['contractor'],
+        if ($request->wantsJson()) {
+            return response()->json([
+                'id' => $project->id,
+                'project_name' => $project->project_name,
+                'contractor' => $project->contractor,
+                'message' => 'Project added.'
             ]);
-
-            if ($request->wantsJson()) {
-                return response()->json([
-                    'id' => $project->id,
-                    'project_name' => $project->project_name,
-                    'contractor' => $project->contractor,
-                    'message' => 'Project added.'
-                ]);
-            }
-            return redirect()->back()->with('success', 'Project added.');
         }
+        return redirect()->back()->with('success', 'Project added.');
     }
+}
+
 
     public function editprojects($id)
     {

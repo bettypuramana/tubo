@@ -13,12 +13,9 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/vertical-layout-light/style.css') }}">
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"> -->
-     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-
-
+      <!-- DataTables CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/dataTable/dataTables.bootstrap5.min.css') }}">
     <!-- endinject -->
-    <!-- <link rel="shortcut icon" href="{{ asset('assets/admin/images/gfdgdgdfgdfgd.png') }}" /> -->
         @yield('css')
   </head>
   <body>
@@ -45,56 +42,8 @@
                 Careers
               </a>
             </li>
-            
           </ul>
           <ul class="navbar-nav navbar-nav-right">
-           
-            
-            <li class="nav-item dropdown  d-flex">
-              <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="typcn typcn-bell mr-0"></i>
-                <span class="count bg-danger">2</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                <!-- <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="typcn typcn-info-large mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      Just now
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-warning">
-                      <i class="typcn typcn-cog mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Change Password</h6>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-info">
-                      <i class="typcn typcn-user-outline mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      2 days ago
-                    </p>
-                  </div>
-                </a> -->
-              </div>
-            </li>
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
                 <i class="typcn typcn-user-outline mr-0"></i>
@@ -140,16 +89,7 @@
                 </p>
               </div>
             </div>
-            <!-- <div class="nav-search">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Type to search..." aria-label="search" aria-describedby="search">
-                <div class="input-group-append">
-                  <span class="input-group-text" id="search">
-                    <i class="typcn typcn-zoom"></i>
-                  </span>
-                </div>
-              </div>
-            </div> -->
+            
             <p class="sidebar-menu-title"></p>
           </li>
           <li class="nav-item">
@@ -190,10 +130,7 @@
     <!-- container-scroller -->
     <!-- base:js -->
     <script src="{{ asset('assets/admin/vendors/js/vendor.bundle.base.js') }}"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
+
     <script src="{{ asset('assets/admin/js/off-canvas.js') }}"></script>
     <script src="{{ asset('assets/admin/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('assets/admin/js/template.js') }}"></script>
@@ -206,18 +143,9 @@
     <!-- End plugin js for this page -->
     <!-- Custom js for this page-->
     <script src="{{ asset('assets/admin/js/dashboard.js') }}"></script>
-    <!-- End custom js for this page-->
-
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script> 
-    $(document).ready(function() { 
-      $('#contactTable').DataTable({ responsive: true, pageLength: 10, order: [[0, 'asc']], language: { search: "_INPUT_", searchPlaceholder: "Search..." } 
-      }); 
-    }); </script> -->
-
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script> 
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+   <!-- DataTables JS -->
+    <script src="{{ asset('assets/admin/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/dataTables.bootstrap5.min.js') }}"></script>
     <script>
       $('#contactTable').DataTable({
         responsive: true,

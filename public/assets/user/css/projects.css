@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'Klavika Basic';
+    src: url('/assets/user/fonts/KlavikaCH-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klavika Basic Bold';
+    src: url('/assets/user/fonts/KlavikaCH-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* section 1 Styling */
+
+.section1 {
+    position: relative;
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section1 p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1050px;
+    margin: 0 auto 2rem;
+    text-align: justify;
+    text-align-last: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .section1 h2 {
+        font-size: 2.2rem;
+    }
+
+    .section1 p {
+        max-width: 90%;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 768px) {
+    .section1 {
+        padding: 3rem 1rem;
+    }
+
+    .section1 p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .section1::before {
+        width: 90vw;
+        height: 90vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutus p {
+        text-align: justify;
+    }
+}
+
+/* Section 2 styling */
+
+#section2 {
+    margin-top: -70px;
+}
+
+.projecto {
+    text-align: center;
+    padding: 4rem 1rem;
+    margin: 0 auto;
+}
+
+.projecto h2 {
+    font-family: 'Klavika Basic Bold', 'sans serif';
+    color: rgb(32, 64, 34);
+}
+
+.projecto h4 {
+    margin-top: -20px;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 600px) {
+    .projecto img {
+        max-height: 80px;
+    }
+
+    #project4 img {
+        width: 200px;
+    }
+
+    #project6 img {
+        width: 200px;
+    }
+
+    #project7 img {
+        width: 200px;
+    }
+
+    #project8 img {
+        width: 200px;
+    }
+
+    #project9 img {
+        width: 200px;
+    }
+}
+
+/* Tables styling */
+.tablo {
+    text-align: -webkit-center;
+}
+table {
+    width: 100%;
+    max-width: 1100px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow:  -8px 8px 10px #d0d0d0,
+             8px -8px 10px #f0f0f0;
+}
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 10px;
+    font-size: 1.3rem;;
+    color: white;
+    background-color: rgb(32, 64, 34);
+    border-bottom: 2px solid #ddd;
+}
+
+th.project-column {
+    border-right: 1px solid #ddd;
+}
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+.project-column {
+    border-right: 1px solid #ddd;
+    width: 60%;
+}
+.contractor-column {
+    width: 40%;
+}

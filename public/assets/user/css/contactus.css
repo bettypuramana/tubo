@@ -1,0 +1,373 @@
+@font-face {
+    font-family: 'Klavika Basic';
+    src: url('/assets/user/fonts/KlavikaCH-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Klavika Basic Bold';
+    src: url('/assets/user/fonts/KlavikaCH-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* contact Section Styling */
+.contact {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    background: url('/assets/user/images/contact-us-bg.png') center/cover no-repeat;
+    height: 80vh;
+}
+
+.contact h2 {
+    margin-bottom: 10px;
+    font-size: 3.5rem;
+    color: rgb(32, 64, 34);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Klavika Basic', sans-serif;
+    position: relative;
+    display: inline-block;
+}
+
+.contact h4 {
+    font-size: 1.1rem;
+    margin-bottom: 7px;
+    color: rgb(32, 64, 34);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    line-height: 0.1;
+    color: #333;
+    max-width: 1200px;
+    text-align: justify;
+    text-align-last: left;
+}
+
+.contact .btn {
+    text-transform: capitalize;
+    margin-top: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .contact h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact p {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 3rem 1rem;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .contact p {
+        font-size: 1rem;
+        line-height: 0.8;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact p {
+        text-align: justify;
+    }
+}
+
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.right-side {
+    flex: 1 1 50%;
+    padding: 2rem;
+    background-color: initial;
+    min-height: 300px;
+    box-sizing: border-box;
+}
+
+.left-side {
+    flex: 1 1 50%;
+    padding: 2rem;
+    background-color: initial;
+    min-height: 300px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+
+    .left-side,
+    .right-side {
+        flex: 1 1 100%;
+    }
+
+    .left-side {
+        align-items: center;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 220px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.input-container {
+    width: 100%;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    right: 0px;
+    top: calc(50% + 5px);
+    transform: translateY(calc(-50% - 5px));
+}
+
+.input {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    transition: .2s linear;
+    border: 1.5px solid rgb(32, 64, 34);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    resize: vertical;
+    background-color: initial;
+}
+
+.input::placeholder {
+    color: rgb(32, 32, 32);
+    opacity: 1;
+}
+
+.input:focus {
+    outline: none;
+    border: 0.5px solid rgb(32, 64, 34);
+    box-shadow: -5px -5px 0px rgb(32, 64, 34);
+}
+
+.input-container:hover>.icon {
+    animation: anim 1s linear infinite;
+}
+
+.custom-dropdown .selected {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    border: 1.5px solid rgb(32, 64, 34);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: initial;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+    cursor: pointer;
+    transition: .2s linear;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #777777;
+}
+
+/* Dropdown options */
+.custom-dropdown .options-container {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1.5px solid rgb(32, 64, 34);
+    box-shadow: -5px -5px 0px rgb(32, 64, 34);
+    z-index: 100;
+}
+
+.custom-dropdown .option {
+    padding: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.custom-dropdown .option:hover {
+    background-color: #f0f0f0;
+}
+
+.custom-dropdown.active .selected {
+    box-shadow: -5px -5px 0px rgb(32, 64, 34);
+    border: 0.5px solid rgb(32, 64, 34);
+}
+
+.input[type="file"] {
+    font-family: 'Klavika Basic', sans-serif;
+    position: relative;
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    transition: .2s linear;
+    border: 1.5px solid rgb(32, 64, 34);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.input[type="file"]::before {
+    content: attr(data-placeholder);
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #777777;
+}
+
+@keyframes anim {
+
+    0%,
+    100% {
+        transform: translateY(calc(-50% - 5px)) scale(1);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 5px)) scale(1.1);
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact {
+        height: 95vh;
+        padding: 1rem 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    .contact {
+        height: 160vh;
+    }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+    form {
+        gap: 15px;
+    }
+
+    .selected,
+    .input,
+    .option {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .contact {
+        height: 165vh;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .contact {
+        height: 174vh;
+        padding: 0rem 0rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .left-side {
+        padding: 0rem 10rem;
+    }
+}
+
+@media (min-width: 2160px) {
+   /* .contact p {
+        font-size: 2.1rem;
+    }
+
+    .contact h4 {
+        font-size: 2.5rem;
+    }
+    .social-linkedin img {
+        height: 40px;
+        width: 40px;
+    }
+    .input {
+        font-size: 25px;
+        height: 50px;
+        padding: 20px;
+    }
+
+    .btn {
+        padding: 1.5rem 3rem;
+        } */
+
+    .left-side {
+        padding: 7rem 22rem;
+    }
+    .right-side {
+        padding: 19rem 15rem;
+    }
+} 
+
+@media (min-width: 1700px) and (max-width: 2159px) {
+     .left-side {
+        position: relative;
+        left: 7%;
+    }
+    .right-side {
+        position: relative;
+    }
+}
