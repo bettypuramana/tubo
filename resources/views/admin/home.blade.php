@@ -61,7 +61,7 @@
                             @foreach ($contact as $row)
                             <div class="d-flex justify-content-between mb-md-5 mt-3">
                               <div class="small">{{ $row->name }}</div>
-                              <div class="small">{{ $row->subject }}</div>
+                              <div class="small">{{ $row->email }}</div>
                               @if ($row->created_at)
                                   <div class="text-warning small">{{ $row->created_at->format('d-m-Y') }}</div>
                               @else

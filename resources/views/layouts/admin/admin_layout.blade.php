@@ -15,13 +15,7 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/css/vertical-layout-light/style.css') }}">
       <!-- DataTables CSS -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/dataTable/dataTables.bootstrap5.min.css') }}">
-
-
-
-
-
     <!-- endinject -->
-    <!-- <link rel="shortcut icon" href="{{ asset('assets/admin/images/gfdgdgdfgdfgd.png') }}" /> -->
         @yield('css')
   </head>
   <body>
@@ -48,56 +42,8 @@
                 Careers
               </a>
             </li>
-            
           </ul>
           <ul class="navbar-nav navbar-nav-right">
-           
-            
-            <li class="nav-item dropdown  d-flex">
-              <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="typcn typcn-bell mr-0"></i>
-                <span class="count bg-danger">2</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                <!-- <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="typcn typcn-info-large mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      Just now
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-warning">
-                      <i class="typcn typcn-cog mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Change Password</h6>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-info">
-                      <i class="typcn typcn-user-outline mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      2 days ago
-                    </p>
-                  </div>
-                </a> -->
-              </div>
-            </li>
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
                 <i class="typcn typcn-user-outline mr-0"></i>
@@ -143,16 +89,7 @@
                 </p>
               </div>
             </div>
-            <!-- <div class="nav-search">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Type to search..." aria-label="search" aria-describedby="search">
-                <div class="input-group-append">
-                  <span class="input-group-text" id="search">
-                    <i class="typcn typcn-zoom"></i>
-                  </span>
-                </div>
-              </div>
-            </div> -->
+            
             <p class="sidebar-menu-title"></p>
           </li>
           <li class="nav-item">

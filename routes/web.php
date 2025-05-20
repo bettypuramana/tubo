@@ -13,9 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [App\Http\Controllers\UserController::class, 'index'])->name('user.home');
+Route::get('/about_us', [App\Http\Controllers\UserController::class, 'about_us'])->name('about_us');
+Route::get('/services', [App\Http\Controllers\UserController::class, 'services'])->name('services');
+Route::get('/projects', [App\Http\Controllers\UserController::class, 'projects'])->name('projects');
+Route::get('/careers', [App\Http\Controllers\UserController::class, 'careers'])->name('careers');
+Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
+Route::post('/contact-submit', [App\Http\Controllers\UserController::class, 'store_contact'])->name('contact.store');
+Route::post('/career-submit', [App\Http\Controllers\UserController::class, 'store_career'])->name('career.store');
+
 
 Auth::routes();
 Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
