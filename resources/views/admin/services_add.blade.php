@@ -36,7 +36,7 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="exampleInputMobile" class="col-sm-3 col-form-label">Image</label>
+                      <label for="exampleInputMobile" class="col-sm-3 col-form-label">Image(1023*1104)</label>
                       <div class="col-sm-9">
                         <input type="file" class="form-control" id="image" name="image" >
                         @error('image')
