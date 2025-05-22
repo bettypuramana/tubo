@@ -48,7 +48,7 @@
                     @endforeach
                 @endif
                
-            </div>
+            </div>   
         </section>
         <section class="projects">
             <h2>Company Profile</h2>
