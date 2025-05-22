@@ -30,7 +30,7 @@
                             <ul class="session-by-channel-legend">
                             @if (!empty($services))
                               @foreach ($services as $row)
-                                <li>
+                                <li style="margin-top:10px;">
                                   <div>{{ $row->title }}</div>
                                   <div></div>
                                 </li>
@@ -61,7 +61,7 @@
                             @foreach ($contact as $row)
                             <div class="d-flex justify-content-between mb-md-5 mt-3">
                               <div class="small">{{ $row->name }}</div>
-                              <div class="small">{{ $row->email }}</div>
+                              <!-- <div class="small">{{ $row->email }}</div> -->
                               @if ($row->created_at)
                                   <div class="text-warning small">{{ $row->created_at->format('d-m-Y') }}</div>
                               @else
@@ -70,7 +70,6 @@
                             </div>
                             @endforeach
                           @endif
-                            <canvas id="eventChart"></canvas>
                           </div>
                         </div>
                       </div>
@@ -88,7 +87,7 @@
                     <div class="d-flex flex-wrap justify-content-between">
                       <h4 class="card-title mb-3">Careers</h4>
                     </div>
-                    <div class="row">
+                    <div class="row" style="margin-top:10px;">
                       <div class="col-12">
                         <div class="row">
                           <div class="col-sm-12">

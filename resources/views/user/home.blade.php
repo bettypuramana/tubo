@@ -51,6 +51,7 @@
             </div>
         </section>
         <section class="iso">
+            <h2>Accreditations</h2>
             <div class="iso-logos">
                 <img src="{{ asset('assets/user/images/ISO/ISO 9001.jpg') }}" alt="" data-aos="fade-up">
                 <img src="{{ asset('assets/user/images/ISO/ISO 14001.jpg') }}" alt="" data-aos="fade-up">

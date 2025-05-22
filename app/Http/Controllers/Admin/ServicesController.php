@@ -91,10 +91,12 @@ class ServicesController extends Controller
         $validated = $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'image' => 'nullable|mimes:png,jpg,jpeg|max:3000|dimensions:width=1023,height=1104',
         ],
         [
             'title.required' => 'This field is required',
             'description.required' => 'This field is required',
+            'image.dimensions' => 'Image must be exactly 1023 x 1104 pixels.',
         ]);
 
         $old = $request->input('old');

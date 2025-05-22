@@ -296,8 +296,14 @@ a {
     }
 }
 
-.about,
+.about {
+    text-align: center;
+    padding: 4rem 1rem;
+    margin: 0 auto;
+}
+
 .projects {
+    max-width: 1500px;
     text-align: center;
     padding: 4rem 1rem;
     margin: 0 auto;
@@ -532,7 +538,7 @@ a {
 
 .logo-box {
     background-color: #f8f8f8;
-    padding: 20px 40px;
+    padding: 20px 35px;
     border-radius: 10px;
     width: 100%;
     max-width: 200px;
@@ -552,11 +558,19 @@ a {
     max-height: 80px;
     object-fit: contain;
 }
+
 @media (min-width: 1600px) {
     .logo-box {
-        padding: 40px 130px;
+        padding: 40px 45px;
     }
 }
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .logo-box {
+        padding: 20px 0px;
+    }
+}
+
 /* Responsive behavior */
 @media (max-width: 1024px) {
     .logos {
@@ -796,8 +810,12 @@ footer {
 }
 
 .iso {
-    padding: 40px 20px;
-    backdrop-filter: blur(6px);
+    padding: 90px 20px;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0.85) 100%);
+    
     text-align: center;
 }
 
@@ -816,7 +834,6 @@ footer {
     height: 150px;
     object-fit: contain;
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
@@ -835,4 +852,15 @@ footer {
         width: 100px;
         height: 100px;
     }
+}
+
+.iso h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: rgb(32, 64, 34);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Klavika Basic', sans-serif;
+    position: relative;
+    display: inline-block;
 }

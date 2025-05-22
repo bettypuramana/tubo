@@ -31,7 +31,7 @@
           </button>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-          <ul class="navbar-nav mr-lg-2">
+          <!-- <ul class="navbar-nav mr-lg-2">
             <li class="nav-item  d-none d-lg-flex">
               <a class="nav-link" href="{{ route('contact-list') }}">
                 Contact
@@ -42,11 +42,11 @@
                 Careers
               </a>
             </li>
-          </ul>
+          </ul> -->
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
-                <i class="typcn typcn-user-outline mr-0"></i>
+                <img src="{{ asset('assets/admin/images/user.png') }}" alt="image" style="box-shadow: none;">
                 <span class="nav-profile-name">Tubo Admin</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -108,6 +108,18 @@
             <a class="nav-link" href="{{ route('clients-list') }}">
               <i class="typcn typcn-group menu-icon"></i>
               <span class="menu-title">Clients </span>
+            </a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('contact-list') }}">
+              <i class="typcn typcn-contacts menu-icon"></i>
+              <span class="menu-title">Contact </span>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('career-list') }}">
+              <i class="typcn typcn-briefcase menu-icon"></i>
+              <span class="menu-title">Careers </span>
             </a>
           </li>         
         </ul>
